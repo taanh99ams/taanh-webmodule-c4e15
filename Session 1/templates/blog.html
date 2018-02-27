@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Blog</title>
+  </head>
+  <body>
+    <!-- jinja 2 -->
+    <h1> {{ article_title }} </h1>
+    <!-- <p> {{ post_1 }} </p>
+    <p> {{ post_2 }} </p> -->
+    {% for post in posts     %}
+    <p> {{ post.content }} </p>
+    <p> {{ post.author  }} </p>
+    {% endfor %}
+  </body>
+</html>

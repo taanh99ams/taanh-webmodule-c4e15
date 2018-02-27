@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>User Information</title>
+  </head>
+  <body>
+    <h1> {{ article_name }}
+      {% for user in user_info     %}
+      <p> {{ user.name }} </p>
+      <p> {{ user.age  }} </p>
+      <p> {{ user.sex  }} </p>
+      <p> {{ user.interest }} </p>
+      {% endfor %}
+
+  </body>
+</html>
