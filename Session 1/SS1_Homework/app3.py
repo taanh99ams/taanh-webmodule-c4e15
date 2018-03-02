@@ -4,11 +4,11 @@ app = Flask(__name__)
 @app.route('/user/<username>')
 def user(username):
     users = {
-            "anh":  {
+            "anh" :  {
                     "name": "Ta Anh",
                     "age": 19
                     },
-            "trang": {
+            "trang" : {
                         "name": "Ha Trang",
                         "age": 20
                         }
