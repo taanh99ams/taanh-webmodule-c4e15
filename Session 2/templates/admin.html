@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Chiec Khan Gio Am</title>
+  </head>
+  <body>
+    <h1> Admin </h1>
+
+    <table border='1px'>
+      <thead>
+      <th> No. </th>
+      <th> Name </th>
+      <th> YOB </th>
+      <th> Status </th>
+      <th> Action </th>
+    </thead>
+    <tbody>
+      {% for service in services %}
+
+<tr>
+  <td> {{ loop.index }} </td>
+  <td>{{ service.name }}</td>
+  <td>
+    {{ 'Female' if service.gender == 0 else 'Male' }}
+  </td>
+  <!-- <td>{{ service.gender }}</td> -->
+  <td>
+    {{ 'Busy' if service.status else 'Free' }}
+  </td>
+  <td>
+    <!-- url_for: ben trong la function can chay -->
+    <a href='{{ url_for('update', service_id=service.id) }}'>Edit</a>
+    <a href='{{ url_for('delete', service_id=service.id) }}'>Delete</a>
+  </td>
+</tr>
+{% endfor %}
+
+
+<!-- tr*2>td*5 -->

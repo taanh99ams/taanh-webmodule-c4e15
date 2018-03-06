@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Dating now </title>
+  </head>
+  <body>
+    <table border='1px'>
+    <h1>Admin</h1>
+    <thead>
+      <th>No.</th>
+      <th>Name</th>
+      <th>YOB</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>Description</th>
+      <th>Measurement</th>
+    <tbody>
+      {% for dating in datings %}
+      <tr>
+        <td>{{loop.index}}</td>
+        <td>{{dating.name}}</td>
+        <td>{{dating.yob}}</td>
+        <td>{{dating.phone}}</td>
+        <td>{{dating.description}}</td>
+        <td>{{dating.measurement}}</td>
+        <td>
+          <a href='#'> Edit </a>
+          <a href='#'> Delete </a>
+        </td>
+      </tr>
+
+      {% endfor %}
+    </tbody>
+
+
+    </thead>
+  </body>
+</html>
+
+
+<!-- name = StringField()
+  yob = IntField()
+  phone = StringField()
+  address = StringField()
+  description = StringField()
+  measurement = ListField()
+  image = StringField() -->

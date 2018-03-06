@@ -21,7 +21,7 @@ for i in range(50):
     print('Saving service', i+1, '.....')
     service = Service(name=faker.name(),
                         yob=randint(1990, 2000),
-                        gender=randint(0, 1),
+                        gender=choice(['Male','Female']),
                         height=randint(150, 175),
                         phone=faker.phone_number(),
                         address=faker.address(),

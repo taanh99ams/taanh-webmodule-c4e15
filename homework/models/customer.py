@@ -1,8 +1,8 @@
-from mongoengine import Document, StringField, IntField, BooleanField
+from mongoengine import *
 
 class Customer(Document):
     name = StringField()
     gender = IntField()
     phone = StringField()
     job = StringField()
-    contacted = StringField()
+    contacted = StringField(
