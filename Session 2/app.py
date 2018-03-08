@@ -58,7 +58,7 @@ def create():
 def update(service_id):
     service_to_update = Service.objects().with_id(service_id)
     if request.method == 'GET':
-        return render_template('new_service.html')
+        return render_template('new_service.html', service_to_update=service_to_update)
     elif request.method == 'POST':
         form = request.form
         name = form['name']
@@ -66,11 +66,17 @@ def update(service_id):
         phone = form['phone']
         gender = form['gender']
 
-        new_service = Service(name=name,
-                                yob=yob,
-                                phone=phone,
-                                gender=gender)
-        new_service.save()
+        # new_service = Service(name=name,
+        #                         yob=yob,
+        #                         phone=phone,
+        #                         gender=gender)
+        # new_service.save()
+        service_to_update.update(
+                                set__name=name,
+                                set__yob=yob,
+                                set__gender=gender,
+                                set__phone=phone
+        )
         return redirect(url_for('admin'))
 
 
